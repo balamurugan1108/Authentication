@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable,  } from 'rxjs';
+import { map, Observable, } from 'rxjs';
 
 
 
@@ -22,7 +22,7 @@ export class AuthService {
         if (decodedJwtData) {
           if (decodedJwtData.name == datas.userName) {
             localStorage.setItem("name", decodedJwtData.name);
-    
+
           } else {
             alert("Username is incorrect");
             return false;
@@ -33,5 +33,7 @@ export class AuthService {
       } return res;
     }))
   }
- 
+  IsloggerOut() {
+    localStorage.clear();
   }
+}
